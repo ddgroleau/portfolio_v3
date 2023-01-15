@@ -41,5 +41,5 @@ jobs:
             && APP_PORT="${envVars[0]}" \
             APP_NETWORK="${envVars[1]}" \
             docker compose up -d --build \
-            && exit
+            && exit \
             && exit 0;
