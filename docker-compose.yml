@@ -2,6 +2,7 @@ version: '3.8'
 services:
     laravel:
         container_name: portfolio_v3
+        restart: always
         build:
             context: ./vendor/laravel/sail/runtimes/8.2
             dockerfile: Dockerfile
