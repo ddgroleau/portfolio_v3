@@ -19,15 +19,17 @@ jobs:
         env:
           APP_PORT: ${{ secrets.APP_PORT }}
           APP_NETWORK: ${{ secrets.APP_NETWORK }}
+          APP_KEY: ${{ secrets.APP_KEY }}
+          APP_URL: ${{ secrets.APP_URL }}
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER_NAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.PORT }}
           passphrase: ${{ secrets.PASSPHRASE }}
-          envs: APP_PORT,APP_NETWORK
+          envs: APP_PORT,APP_NETWORK,APP_URL,APP_KEY
           script: |
-            export envVars=("$APP_PORT" "$APP_NETWORK") \
+            export envVars=("$APP_PORT" "$APP_NETWORK" "$APP_URL" "$APP_KEY") \
             && if [[ ! -d ~/repos  ]]; then mkdir repos; fi \
             && if [[ ! -d ~/repos/portfolio_v3 ]]; \
             then (cd repos && git clone https://github.com/ddgroleau/portfolio_v3.git); \
@@ -40,6 +42,8 @@ jobs:
             fi \
             && APP_PORT="${envVars[0]}" \
             APP_NETWORK="${envVars[1]}" \
+            APP_URL="${envVars[2]}" \
+            APP_KEY="${envVars[3]}" \
             docker compose up -d --build \
             && exit \
             && exit 0;
