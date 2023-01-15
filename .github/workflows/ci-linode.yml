@@ -38,8 +38,8 @@ jobs:
             then echo "No container found. Starting portfolio_v3 container..."; \
             else docker stop portfolio_v3 && docker rm portfolio_v3; \
             fi \ 
-            export APP_PORT="${envVars[0]}" && \
-            export APP_NETWORK="${envVars[1]}" && \
-            ./vendor/bin/sail up \
+            && export APP_PORT="${envVars[0]}" \
+            && export APP_NETWORK="${envVars[1]}" \
+            && ./vendor/bin/sail up \
             && exit \
             && exit 0;
