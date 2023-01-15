@@ -31,15 +31,13 @@ jobs:
             && if [[ ! -d ~/repos  ]]; then mkdir repos; fi \
             && if [[ ! -d ~/repos/portfolio_v3 ]]; \
             then (cd repos && git clone https://github.com/ddgroleau/portfolio_v3.git); \
-            fi; \
+            fi \
             && cd ~/repos/portfolio_v3 \
             && git pull origin main \
             && if [[ -z $(docker container ls -a | grep "portfolio_v3") ]]; \
             then echo "No container found. Starting portfolio_v3 container..."; \
             else docker stop portfolio_v3 && docker rm portfolio_v3; \
-            fi; \ 
-            # && APP_PORT="${envVars[0]}" \
-            # && APP_NETWORK="${envVars[1]}" \ 
-            ./vendor/bin/sail up \
+            fi \ 
+            APP_PORT="${envVars[0]}" APP_NETWORK="${envVars[1]}" ./vendor/bin/sail up \
             && exit \
             && exit 0;
