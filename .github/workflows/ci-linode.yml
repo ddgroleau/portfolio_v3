@@ -41,6 +41,6 @@ jobs:
             && composer update \
             && APP_PORT="${envVars[0]}" \
             APP_NETWORK="${envVars[1]}" \
-            ./vendor/bin/sail up \
+            ./vendor/bin/sail up &> /dev/null \
             && exit \
             && exit 0;
