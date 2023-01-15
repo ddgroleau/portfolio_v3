@@ -38,9 +38,8 @@ jobs:
             then echo "No container found. Starting portfolio_v3 container..."; \
             else docker stop portfolio_v3 && portfolio_v3; \
             fi \
-            && composer update \
-            && pwd \
             && APP_PORT="${envVars[0]}" \
             APP_NETWORK="${envVars[1]}" \
-            ./vendor/bin/sail up & \
-            exit 0;
+            docker compose up -d --build \
+            && exit;
+            && exit 0;
