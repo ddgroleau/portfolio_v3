@@ -37,7 +37,6 @@ services:
             - '.:/var/www/html'
         networks:
             - webnet
-
 networks:
     webnet:
         name: ${APP_NETWORK}
