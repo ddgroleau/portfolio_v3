@@ -15,9 +15,9 @@
             <div class="container__inner">
                 <header>
                     <nav>
-                        <a href="#"><img class="icon__link" src="{{ asset('/media/github.svg') }}" height="50" width="50" alt="GitHub Link"/></a>
-                        <a href="#"><img class="icon__link" src="{{ asset('/media/linkedin.svg') }}" height="50" width="50" alt="LinkedIn Link"/></a>
-                        <a href="#"><img class="icon__link" src="{{ asset('/media/email.svg') }}" height="50" width="50" alt="Email Me"/></a>
+                        <a href="https://github.com/ddgroleau" target="_blank"><img class="icon__link" src="{{ asset('/media/github.svg') }}" height="50" width="50" alt="GitHub Link"/></a>
+                        <a href="https://www.linkedin.com/in/dangroleau/" target="_blank"><img class="icon__link" src="{{ asset('/media/linkedin.svg') }}" height="50" width="50" alt="LinkedIn Link"/></a>
+                        <a href="mailto:ddgroleau@gmail.com"><img class="icon__link" src="{{ asset('/media/email.svg') }}" height="50" width="50" alt="Email Me"/></a>
                     </nav>
                     <section class="header__text">
                         <h1>Dan Groleau</h1>
@@ -30,10 +30,10 @@
                 </header>
                 <main>
                     <ul class="home__ul">
-                        <li class="home__li"><a>Projects</a></li>
-                        <li class="home__li"><a>Blog</a></li>
-                        <li class="home__li"><a>Resume</a></li>
-                        <li class="home__li"><a>Contact</a></li>
+                        <li class="home__li"><a href="#">Projects</a></li>
+                        <li class="home__li"><a href="#">Blog</a></li>
+                        <li class="home__li"><a href="{{ asset('/media/Dan_Groleau_Resume.pdf') }}">Resume</a></li>
+                        <li class="home__li"><a href="mailto:ddgroleau@gmail.com">Contact</a></li>
                     </ul>
                 </main>
                 <footer>
