@@ -38,6 +38,7 @@ jobs:
             then echo "No container found. Starting portfolio_v3 container..."; \
             else docker stop portfolio_v3 && portfolio_v3; \
             fi \
+            && composer update \
             && APP_PORT="${envVars[0]}" \
             APP_NETWORK="${envVars[1]}" \
             ./vendor/bin/sail up \
