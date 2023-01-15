@@ -16,9 +16,15 @@
             <div class="layout__container-inner">
                 <header>
                     <nav>
-                        <a href="https://github.com/ddgroleau" target="_blank"><img class="icon__link" src="{{ asset('/media/github.svg') }}" height="50" width="50" alt="GitHub Link"/></a>
-                        <a href="https://www.linkedin.com/in/dangroleau/" target="_blank"><img class="icon__link" src="{{ asset('/media/linkedin.svg') }}" height="50" width="50" alt="LinkedIn Link"/></a>
-                        <a href="mailto:ddgroleau@gmail.com"><img class="icon__link" src="{{ asset('/media/email.svg') }}" height="50" width="50" alt="Email Me"/></a>
+                        <a href="https://github.com/ddgroleau" target="_blank">
+                            <img class="icon__link" src="{{ asset('/media/github.svg') }}" height="50" width="50" alt="GitHub Link"/>
+                        </a>
+                        <a href="https://www.linkedin.com/in/dangroleau/" target="_blank">
+                            <img class="icon__link" src="{{ asset('/media/linkedin.svg') }}" height="50" width="50" alt="LinkedIn Link"/>
+                        </a>
+                        <a href="mailto:ddgroleau@gmail.com">
+                            <img class="icon__link" src="{{ asset('/media/email.svg') }}" height="50" width="50" alt="Email Me"/>
+                        </a>
                     </nav>
                 </header>
                 <main>

@@ -1,0 +1,43 @@
+name: Deploy to Linode Compute Instance
+
+on:
+  push:
+    branches: ["main"]
+
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Docker - Pull Images and Run Containers on Linode Remote Server
+        uses: appleboy/ssh-action@master
+        env:
+          APP_PORT: ${{ secrets.APP_PORT }}
+          APP_NETWORK: ${{ secrets.APP_NETWORK }}
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER_NAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.PORT }}
+          passphrase: ${{ secrets.PASSPHRASE }}
+          envs: APP_PORT,APP_NETWORK
+          script: |
+            export envVars=( $APP_PORT $APP_NETWORK ) \
+            && if [[ ! -d ~/repos  ]]; then mkdir repos; fi \
+            && if [[ ! -d ~/repos/portfolio_v3 ]]; \
+            then (cd repos && git clone https://github.com/ddgroleau/portfolio_v3.git); \
+            fi \
+            && cd ~/repos/portfolio_v3 \
+            && git pull origin main \
+            && if [[ -z $(docker container ls -a | grep "portfolio_v3") ]]; \
+            then echo "No container found. Starting portfolio_v3 container..."; \
+            else docker stop portfolio_v3 && docker rm portfolio_v3; \
+            fi \
+            APP_PORT="${envVars[0]}" APP_NETWORK="${envVars[1]}" ./vendor/bin/sail up \
+            && exit \
+            && exit 0;
