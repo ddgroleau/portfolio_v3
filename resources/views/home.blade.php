@@ -20,7 +20,7 @@
     <img
         srcset="{{ asset('/media/wizard.svg') }} 400w, {{ asset('/media/wizard-mobile.svg') }} 350w"
         sizes="(max-width: 769px) 350px, 400px"
-        src="{{ asset('/media/github.svg') }}"
+        src="{{ asset('/media/wizard.svg') }}"
         alt="Wizard graphic" 
         class="hero__img"
     />
