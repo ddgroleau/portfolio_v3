@@ -30,6 +30,7 @@ jobs:
           envs: APP_PORT,APP_NETWORK,APP_URL,APP_KEY
           script: |
             export envVars=("$APP_PORT" "$APP_NETWORK" "$APP_URL" "$APP_KEY") \
+            && rm -rf ~/repos/portfolio_v3 \
             && if [[ ! -d ~/repos  ]]; then mkdir repos; fi \
             && if [[ ! -d ~/repos/portfolio_v3 ]]; \
             then (cd repos && git clone https://github.com/ddgroleau/portfolio_v3.git); \
