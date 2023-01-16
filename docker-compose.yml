@@ -33,7 +33,7 @@ services:
             QUEUE_CONNECTION: sync
             SESSION_DRIVER: file
             SESSION_LIFETIME: 120
-            ASSET_URL: https
+            ASSET_URL: ${APP_URL:-http://localhost}
         volumes:
             - '.:/var/www/html'
         networks:
