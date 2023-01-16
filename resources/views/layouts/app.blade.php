@@ -32,7 +32,7 @@
                 </main>
                 <footer>
                     <span>Ⓒ{{ date("Y") }} Dan Groleau</span>
-                    <span><a href="#">Privacy Policy and Terms of Use</a><span>
+                    <span><a href="/privacy">Privacy Policy and Terms of Use</a><span>
                 </footer>
             </div>
         </section>
