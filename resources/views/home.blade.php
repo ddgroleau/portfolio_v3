@@ -17,11 +17,8 @@
         <li class="home__li"><a href="{{ asset('/media/Dan_Groleau_Resume.pdf') }}">Resume</a></li>
         <li class="home__li"><a href="mailto:ddgroleau@gmail.com">Contact</a></li>
     </ul>
-    <img
-        srcset="{{ asset('/media/wizard.svg') }} 400w, {{ asset('/media/wizard-mobile.svg') }} 350w"
-        sizes="(max-width: 769px) 350px, 400px"
-        src="{{ asset('/media/wizard.svg') }}"
-        alt="Wizard graphic" 
-        class="hero__img"
-    />
+    <picture class="hero__img">
+        <source media="(max-width:769px)" srcset="{{ asset('/media/wizard-mobile.svg') }}" />
+        <img src="{{ asset('/media/wizard.svg') }}" alt="Wizard graphic" />
+    </picture> 
 @endsection
