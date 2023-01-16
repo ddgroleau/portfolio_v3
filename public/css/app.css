@@ -76,6 +76,7 @@ p {
     background-image: linear-gradient(180deg, var(--primary), var(--primary-light-x));
     align-items: center;
     justify-content: center;
+    overflow-y: hidden;
 }
 
 .layout__container-inner {
@@ -84,7 +85,6 @@ p {
     width: 90%;
     display: flex;
     flex-direction: column;
-    overflow-y: hidden;
 }
 
 
