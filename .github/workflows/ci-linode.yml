@@ -41,6 +41,7 @@ jobs:
             else docker stop portfolio_v3 && docker rm portfolio_v3; \
             fi \
             && composer update \
+            && chmod -R 777 storage \
             && APP_PORT="${envVars[0]}" \
             APP_NETWORK="${envVars[1]}" \
             APP_URL="${envVars[2]}" \
