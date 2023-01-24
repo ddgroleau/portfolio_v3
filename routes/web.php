@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 Route::get('/privacy', function () {
-    return view('privacy');
+    return view('privacy', [ 'is_home' => true ]);
 });
 
 Route::get('/projects', function () {
