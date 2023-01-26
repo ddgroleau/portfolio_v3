@@ -7,6 +7,7 @@
     --primary-light: #352A66;
     --primary-light-x: #48418E;
     --secondary: #FF635F;
+    --secondary-transparent: rgba(255, 99, 95, 0.2);
     --secondary-light: #F87C62;
     --text: #FFFFFF;
     --text-soft: #F0EEEF;
@@ -14,8 +15,10 @@
     --font-xxl: max(4rem, 5vw);
     --font-xl: max(2.5rem, 2.5vw);
     --font-l: max(2rem,2vw);
+    --font-ml: max(1.5rem,1.5vw);
     --font-m: max(1.2rem, 1.2vw);
     --font-s: max(1rem, 1vw);
+    --border-rad: 12px;
 }
 
 
@@ -62,6 +65,21 @@ h2 {
 p {
     font-size: var(--font-m);
     line-height: max(2rem, 2vw);
+}
+
+code {
+    font-family: monospace;
+}
+
+.styled__link {
+    border: solid var(--text) 1px;
+    padding: 0.5rem 1rem;
+}
+
+.styled__link:hover {
+    background-color: var(--text);
+    color: var(--primary);
+    transition: .4s ease-in-out;
 }
 
 
@@ -187,6 +205,52 @@ nav a:nth-child(4) {
     z-index: 0;
 }
 
+/* Work */
+
+.work__heading {
+    font-weight: 200;
+    font-size: var(--font-xl);
+}
+
+.work__projects {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Components */
+
+/* Project Card */
+.project__card {
+    border: solid var(--secondary) 1px;
+    border-radius: var(--border-rad);
+    background-color: var(--secondary-transparent);
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    column-gap: 3rem;
+    row-gap: 1rem;
+    width: 100%;
+    justify-content: center;
+}
+
+.project__body > p {
+    margin-bottom: 0;
+    min-width: 100%;
+}
+
+.project__body-title {
+    margin: .5rem 0 0 0;
+    font-size: var(--font-m);
+}
+
+.project__body-links {
+    display: flex;
+    padding: 0;
+    margin: 2rem 0 1rem 0;
+    gap: 1rem;
+}
 
 /* Media Queries */
 
@@ -207,6 +271,13 @@ nav a:nth-child(4) {
         top: 2rem;
         right: 10vw;
     }
+    .project__card {
+        flex-flow: row wrap;
+        padding: 1rem 2rem;
+        justify-content: flex-start;
+        width: min(70rem, 80%);
+    }
+    
 }
 
 

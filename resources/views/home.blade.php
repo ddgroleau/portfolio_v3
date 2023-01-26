@@ -12,7 +12,7 @@
         </p>
     </section>
     <ul class="home__ul">
-        <li class="home__li"><a href="/projects">Projects</a></li>
+        <li class="home__li"><a href="/work">Work</a></li>
         <li class="home__li"><a target = "_blank" href="https://dev.to/ddgroleau">Blog</a></li>
         <li class="home__li"><a target = "_blank" href="{{ asset('/media/Dan_Groleau_Resume.pdf') }}">Resume</a></li>
         <li class="home__li"><a href="mailto:ddgroleau@gmail.com">Contact</a></li>
