@@ -241,7 +241,7 @@ nav a:nth-child(4) {
 }
 
 .project__body-title {
-    margin: .5rem 0 0 0;
+    margin: 0;
     font-size: var(--font-m);
 }
 
@@ -277,7 +277,9 @@ nav a:nth-child(4) {
         justify-content: flex-start;
         width: min(70rem, 80%);
     }
-    
+    .project__body-title {
+        margin-top: 0.5rem;
+    }
 }
 
 
