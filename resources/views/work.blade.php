@@ -110,7 +110,7 @@ $communityContributions = [
 @section('title', 'Work')
 
 @section('content')
-    <section>
+    <section class="work__component">
         <h1>Work</h1>
         <h2 class="work__heading">Software Projects</h2><br>
         <section class="work__cards">
