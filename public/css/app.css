@@ -6,6 +6,7 @@
     --primary: #231A39;
     --primary-light: #352A66;
     --primary-light-x: #48418E;
+    --primary-light-x-transparent: rgba(72, 65, 142, .2);
     --secondary: #FF635F;
     --secondary-transparent: rgba(255, 99, 95, 0.2);
     --secondary-light: #F87C62;
@@ -212,7 +213,7 @@ nav a:nth-child(4) {
     font-size: var(--font-xl);
 }
 
-.work__projects {
+.work__cards {
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -252,6 +253,30 @@ nav a:nth-child(4) {
     gap: 1rem;
 }
 
+/* Community Card */
+.community__card {
+    border: solid var(--primary-light-x) 2px;
+    border-radius: var(--border-rad);
+    background-color: var(--primary-light-x-transparent);
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 1.5rem 2rem;
+    gap: 3rem;
+    width: 100%;
+    justify-content: center;
+}
+
+.community__body > p {
+    width: fit-content;
+}
+
+.community__body-title {
+    margin: 0;
+    font-size: var(--font-m);
+    max-width: max(40rem, 60%);
+}
+
+
 /* Media Queries */
 
 @media (min-width: 768px) {
@@ -275,10 +300,13 @@ nav a:nth-child(4) {
         flex-flow: row wrap;
         padding: 1rem 2rem;
         justify-content: flex-start;
-        width: min(70rem, 80%);
+        width: min(80rem, 80%);
     }
-    .project__body-title {
-        margin-top: 0.5rem;
+    .community__card {
+        flex-flow: row nowrap;
+        padding: 1rem 2rem;
+        justify-content: flex-start;
+        width: min(80rem, 80%);
     }
 }
 

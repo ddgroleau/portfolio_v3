@@ -1,10 +1,10 @@
 <article class="community__card">
     <div class="community__image">
-        <img src="{{ $imagePath }}" height="115" width="auto" alt="{{ $imageAlt }}"/>
+        <img src="{{ $imagePath }}" height="172" width="141" alt="{{ $imageAlt }}"/>
     </div>
     <div class="community__body">
-        <h3>{{ $title }}</h3>
+        <h3 class="community__body-title">{{ $title }}</h3>
         <p>{{ $description }}</p>
-        <a href="{{ $linkHref }}">{{ $linkText }}</a>
+        <a class="styled__link" href="{{ $linkHref }}" target="_blank">{{ $linkText }}</a>
     </div>
 </article>

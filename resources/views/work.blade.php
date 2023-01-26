@@ -75,7 +75,35 @@ $projects = [
         ["Bash","NGINX","Docker","Virtualization","Linux"],
         "An Ubuntu virtual machine. I host websites, applications, and datastores using Docker and an NGINX reverse-proxy web server. Personal Project.",
     )
-]
+];
+
+$communityContributions = [
+    new CommunityCard(
+        "/media/react-key-concepts.png",
+        "React Key Concepts Book Cover",
+        "\"React Key Concepts\" (Maximilian Schwarzmüller; Packt Publishing 2022)",
+        "https://www.packtpub.com/product/react-key-concepts/9781803234502",
+        "SEE BOOK",
+        "I reviewed the book as part of the Packt Reviewer's Club before the official book release and provided feedback to Packt Publishing."
+    ),
+    new CommunityCard(
+        "/media/csharp-workshop.png",
+        "C# Workshop Book Cover",
+        "\"The C# Workshop\" (Jason Hales, Almantas Karpavicius & Mateus Viegas; Packt Publishing 2022)",
+        "https://www.packtpub.com/product/the-c-workshop/9781800566491",
+        "SEE BOOK",
+        "I reviewed the book as part of the Packt Reviewer's Club before the official book release and provided feedback to Packt Publishing."
+    ),
+    new CommunityCard(
+        "/media/docker-for-devs.png",
+        "Docker for Developers Book Cover",
+        "\"Docker for Developers\" (Richard Bullington-McGuire, Andrew K. Dennis & Michael Schwartz; Packt Publishing 2020)",
+        "https://www.packtpub.com/product/react-key-concepts/9781803234502",
+        "SEE BOOK",
+        "I contributed to the GitHub repository for the book (https://github.com/PacktPublishing/Docker-for-Developers)."
+    ),
+
+];
 ?>
 @extends('layouts.app')
 
@@ -85,7 +113,7 @@ $projects = [
     <section>
         <h1>Work</h1>
         <h2 class="work__heading">Software Projects</h2><br>
-        <section class="work__projects">
+        <section class="work__cards">
             @foreach ($projects as $project)
                 <x-project-card 
                     :image-path="$project->imagePath" 
@@ -99,8 +127,17 @@ $projects = [
             @endforeach
         </section>
         <h2 class="work__heading">Community Involvement</h2><br>
-        <section>
-
+        <section class="work__cards">
+            @foreach ($communityContributions as $contribution)
+                <x-community-card 
+                    :image-path="$contribution->imagePath" 
+                    :image-alt="$contribution->imageAlt" 
+                    :title="$contribution->title" 
+                    :description="$contribution->description" 
+                    :link-href="$contribution->linkHref" 
+                    :link-text="$contribution->linkText" 
+                />
+            @endforeach
         </section>
     </section>
 @endsection
