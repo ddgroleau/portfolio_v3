@@ -1,4 +1,4 @@
-<article class="project__card">
+<article class="project__card reveal">
     <div class="project__image">
         <img src="{{ $imagePath }}" height="180" width="200" alt="{{ $imageAlt }}"/>
     </div>

@@ -7,7 +7,7 @@
         <h1>Dan Groleau</h1>
         <h2>Software Engineer</h2>
         <p>
-            I am a full-stack software engineer specializing in web development. 
+            I am a senior full-stack software engineer specializing in web development. 
             I enjoy developing websites and applications for businesses of any size.
         </p>
     </section>

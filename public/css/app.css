@@ -16,7 +16,6 @@
     --font-xxl: max(4rem, 5vw);
     --font-xl: max(2.5rem, 2.5vw);
     --font-l: max(2rem,2vw);
-    --font-ml: max(1.5rem,1.5vw);
     --font-m: max(1.2rem, 1.2vw);
     --font-s: max(1rem, 1vw);
     --border-rad: 12px;
@@ -68,6 +67,13 @@ p {
     line-height: max(2rem, 2vw);
 }
 
+button {
+    background: none;
+    text-transform: uppercase;
+    font-size: var(--font-m);
+    cursor: pointer;
+}
+
 code {
     font-family: monospace;
 }
@@ -75,12 +81,25 @@ code {
 .styled__link {
     border: solid var(--text) 1px;
     padding: 0.5rem 1rem;
+    cursor: pointer;
 }
 
 .styled__link:hover {
     background-color: var(--text);
     color: var(--primary);
     transition: .4s ease-in-out;
+}
+
+.reveal {
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: .8s;
+}
+
+.reveal.active {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 
@@ -149,6 +168,11 @@ nav a:nth-child(4) {
     opacity: 0;
 }
 
+nav a {
+    position: relative;
+    z-index: 2;
+}
+
 .icon__link:hover {
     filter: invert(50%) brightness(2);
     transition: .4s;
@@ -161,7 +185,6 @@ nav a:nth-child(4) {
     gap: 2rem;
     justify-content: flex-end;
     padding-top: 2rem;
-    z-index: 2;
 }
 
 
@@ -170,7 +193,6 @@ nav a:nth-child(4) {
 .hero__text, main {
     animation: slideRight .5s ease-out forwards;
     opacity: 0;
-    z-index: 1;
 }
 
 .home__ul {
@@ -206,7 +228,9 @@ nav a:nth-child(4) {
     z-index: 0;
 }
 
+
 /* Work */
+
 .work__heading {
     font-weight: 200;
     font-size: var(--font-xl);
@@ -219,6 +243,16 @@ nav a:nth-child(4) {
     margin-bottom: 4rem;
 }
 
+.work__btns {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 2rem;
+    padding-bottom: 2rem;
+}
+
+
 /* Components */
 
 /* Project Card */
@@ -228,7 +262,6 @@ nav a:nth-child(4) {
     background-color: var(--secondary-transparent);
     display: flex;
     flex-direction: column-reverse;
-    align-items: center;
     padding: 1.5rem 2rem;
     column-gap: 3rem;
     row-gap: 1rem;
@@ -253,9 +286,12 @@ nav a:nth-child(4) {
     gap: 1rem;
 }
 
+
 /* Community Card */
+
 .community__card {
     border: solid var(--primary-light-x) 2px;
+    filter: brightness(1.2);
     border-radius: var(--border-rad);
     background-color: var(--primary-light-x-transparent);
     display: flex;
@@ -264,6 +300,10 @@ nav a:nth-child(4) {
     gap: 3rem;
     width: 100%;
     justify-content: center;
+}
+
+.community__body, .community__image {
+    margin-block: 0.5rem 1rem;
 }
 
 .community__body > p {
@@ -300,6 +340,7 @@ nav a:nth-child(4) {
         flex-flow: row wrap;
         padding: 1rem 2rem;
         justify-content: flex-start;
+        align-items: center;
         width: min(80rem, 80%);
     }
     .community__card {

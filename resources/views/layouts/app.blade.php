@@ -1,8 +1,17 @@
+<?PHP
+    $description = "Dan Groleau is a Senior Fullstack Software Engineer currently working in the Healthcare IT space. Dan specializes in Web Development, and has been building enterprise-level websites and applications for several years.";
+?>
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="{{ $description }}" />
+        <meta name="robots" content="index, follow"/>
+        <meta property="og:title" content="Dan Groleau | Software Engineer" />
+        <meta property="og:site_name" content="https://fullstackdan.com" />
+        <meta property="og:description" content="{{ $description }}" />
+        <meta property="og:image" content="/media/portfolio.svg" />
         <title>@yield('title') | Dan Groleau - Software Engineer 🧙 </title>
         <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
@@ -42,4 +51,5 @@
             </div>
         </section>
     </body>
+    <script type="text/javascript" src="/js/main.js"></script>
 </html>

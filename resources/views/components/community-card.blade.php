@@ -1,4 +1,4 @@
-<article class="community__card">
+<article class="community__card reveal">
     <div class="community__image">
         <img src="{{ $imagePath }}" height="172" width="141" alt="{{ $imageAlt }}"/>
     </div>

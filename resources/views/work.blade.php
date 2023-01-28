@@ -6,7 +6,7 @@ $projects = [
     new ProjectCard(
         "/media/healthcare.svg",
         "Healthcare Workers SVG",
-        "Health & Wellness Discount Application",
+        "Health & Wellness Discount Storefront",
         "https://www.whlchoices.com",
         "",
         ["React", ".NET 6", "SCSS", "SQL/SQL Server", "Jest", "React Testing Library", "Cypress"],
@@ -33,7 +33,7 @@ $projects = [
     new ProjectCard(
         "/media/wordpress.svg",
         "Website with WordPress Logo SVG",
-        "Business Enterprise Marketing Website",
+        "Enterprise Marketing Website",
         "https://www.wholehealthliving.com",
         "",
         ["WordPress","PHP", ".NET 6", "SCSS", "SQL", "MySQL & SQL Server", "JavaScript"],
@@ -112,7 +112,11 @@ $communityContributions = [
 @section('content')
     <section class="work__component">
         <h1>Work</h1>
-        <h2 class="work__heading">Software Projects</h2><br>
+        <menu class="work__btns">
+            <button onClick="scrollElementIntoView('projects')" class="styled__link">Go to Projects</button>
+            <button onClick="scrollElementIntoView('community')" class="styled__link">Go to Community Involvement</button>
+        </menu>
+        <h2 id="projects" class="work__heading">Software Projects</h2><br>
         <section class="work__cards">
             @foreach ($projects as $project)
                 <x-project-card 
@@ -126,7 +130,7 @@ $communityContributions = [
                 />
             @endforeach
         </section>
-        <h2 class="work__heading">Community Involvement</h2><br>
+        <h2 id="community" class="work__heading">Community Involvement</h2><br>
         <section class="work__cards">
             @foreach ($communityContributions as $contribution)
                 <x-community-card 
