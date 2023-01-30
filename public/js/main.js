@@ -9,8 +9,7 @@ const revealElements = () => {
     const animations = document.querySelectorAll(".reveal");
     for (let i = 0; i < animations.length; i++) {
         let elementTop = animations[i].getBoundingClientRect().top;
-        let elementVisible = 50;
-        
+        let elementVisible = window.innerWidth <= 768 ? -50 : 50;
         if (elementTop < window.innerHeight - elementVisible) {
             animations[i].classList.add("active");
         } else {

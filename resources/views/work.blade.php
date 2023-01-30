@@ -116,7 +116,7 @@ $communityContributions = [
             <button onClick="scrollElementIntoView('projects')" class="styled__link">Go to Projects</button>
             <button onClick="scrollElementIntoView('community')" class="styled__link">Go to Community Involvement</button>
         </menu>
-        <h2 id="projects" class="work__heading">Software Projects</h2><br>
+        <h2 id="projects" class="work__heading">Software Projects</h2>
         <section class="work__cards">
             @foreach ($projects as $project)
                 <x-project-card 
@@ -130,7 +130,7 @@ $communityContributions = [
                 />
             @endforeach
         </section>
-        <h2 id="community" class="work__heading">Community Involvement</h2><br>
+        <h2 id="community" class="work__heading">Community Involvement</h2>
         <section class="work__cards">
             @foreach ($communityContributions as $contribution)
                 <x-community-card 

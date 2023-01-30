@@ -252,6 +252,9 @@ nav a {
     padding-bottom: 2rem;
 }
 
+.work__btns button {
+    width: min(18rem, 100%);
+}
 
 /* Components */
 
@@ -300,6 +303,10 @@ nav a {
     gap: 3rem;
     width: 100%;
     justify-content: center;
+}
+
+.community__body {
+    max-width: 100%;
 }
 
 .community__body, .community__image {
