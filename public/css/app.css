@@ -2,15 +2,17 @@
 
 /* Design System */
 
-:root {
+:root, html[data-theme="dark"] {
     --primary: #231A39;
     --primary-light: #352A66;
     --primary-light-x: #48418E;
-    --primary-light-x-transparent: rgba(72, 65, 142, .2);
     --secondary: #FF635F;
     --secondary-transparent: rgba(255, 99, 95, 0.2);
     --secondary-light: #F87C62;
     --text: #FFFFFF;
+    --light: #FFFFFF;
+    --grey: #d8d7db;
+    --grey-dark: #818083;
     --text-soft: #F0EEEF;
     --font: 'Roboto', sans-serif;
     --font-xxl: max(4rem, 5vw);
@@ -19,8 +21,26 @@
     --font-m: max(1.2rem, 1.2vw);
     --font-s: max(1rem, 1vw);
     --border-rad: 12px;
+    --invert: .5;
+    --brightness: 2;
 }
 
+html[data-theme="light"]  {
+    --primary: #ffff;
+    --primary-light: #F0EEEF;
+    --primary-light-x: #f3f0f1;
+    --secondary: #da2c27;
+    --secondary-transparent: rgba(233, 187, 185, 0.2);
+    --secondary-light: #FF635F;
+    --text: #231A39;
+    --text-soft: #352A66;
+    --invert: 1.5;
+    --brightness: 0;
+}
+
+*, html {
+    transition: all .4s ease;
+}
 
 /* Global */
 
@@ -145,7 +165,6 @@ footer a {
 
 footer a:hover {
     color: var(--secondary-light);
-    transition: .4s;
 }
 
 
@@ -168,21 +187,25 @@ nav a:nth-child(4) {
     opacity: 0;
 }
 
+.icon__link {
+    height: 36px;
+    width: 36px;
+}
+
 nav a {
     position: relative;
     z-index: 2;
 }
 
 .icon__link:hover {
-    filter: invert(50%) brightness(2);
-    transition: .4s;
+    filter: invert(var(--invert)) brightness(var(--brightness));
     cursor: pointer;
  }
 
  nav {
     display: flex;
     width: 100%;
-    gap: 2rem;
+    gap: 1.5rem;
     justify-content: flex-end;
     padding-top: 2rem;
 }
@@ -218,7 +241,6 @@ nav a {
 
 .home__li a:hover {
     color: var(--secondary);
-    transition: .4s;
 }
 
 .hero__img {
@@ -226,6 +248,10 @@ nav a {
     bottom: -15vh;
     right: 5vw;
     z-index: 0;
+}
+
+html[data-theme="light"]  .hero__img {
+    opacity: .1;
 }
 
 
@@ -293,10 +319,10 @@ nav a {
 /* Community Card */
 
 .community__card {
-    border: solid var(--primary-light-x) 2px;
+    border: solid var(--secondary) 1px;
     filter: brightness(1.2);
     border-radius: var(--border-rad);
-    background-color: var(--primary-light-x-transparent);
+    background-color: var(--secondary-transparent);
     display: flex;
     flex-direction: column-reverse;
     padding: 1.5rem 2rem;
@@ -324,6 +350,68 @@ nav a {
 }
 
 
+/* Slider */
+
+.switch {
+    display: flex;
+    align-items: center;
+    z-index: 3;
+    animation: slideDown 1s ease-in-out .8s forwards;
+    opacity: 0;
+}
+
+.switch svg {
+    margin: 0 0.5rem;
+}
+    
+.theme-switch {
+  display: inline-block;
+  height: 26px;
+  position: relative;
+  width: 48px;
+}
+
+.slider {
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: var(--secondary-light);
+  border-radius: 34px;
+}
+
+.slider.active {
+    background-color: var(--grey);
+}
+
+.round {
+  background-color: var(--light);
+  bottom: 3px;
+  content: "";
+  height: 20px;
+  left: 3px;
+  position: absolute;
+  width: 20px;
+  border-radius: 34px;
+}
+
+.round.active {
+    transform: translateX(22px);
+}
+
+.light-mode, .light-mode {
+    fill: var(--grey);
+    opacity: .25;
+}
+
+.dark-mode.active, .light-mode.active {
+    fill: var(--secondary);
+    opacity: 1;
+}
+
+
 /* Media Queries */
 
 @media (min-width: 768px) {
@@ -335,6 +423,9 @@ nav a {
         bottom: 0vh;
         right: 15vw;
     }
+    html[data-theme="light"]  .hero__img {
+        opacity: 1;
+    }
     nav {
         flex-direction: column;
         align-items: flex-end;
@@ -342,6 +433,7 @@ nav a {
         position: absolute;
         top: 2rem;
         right: 10vw;
+        gap: 2rem;
     }
     .project__card {
         flex-flow: row wrap;
@@ -355,6 +447,36 @@ nav a {
         padding: 1rem 2rem;
         justify-content: flex-start;
         width: min(80rem, 80%);
+    }
+    .switch {
+        flex-direction: column;
+        margin-top: 1rem;
+    }
+    .theme-switch {
+        transform: rotate(90deg);
+        height: 34px;
+        width: 60px;
+    }
+    .switch svg {
+        height: 34px;
+        width: 34px;
+    }
+    .switch svg {
+        margin: 2rem 0 0 0;
+    }
+    .switch svg:nth-child(1) {
+        margin: 0 0 2rem 0;
+    }
+    .round {
+        height: 28px;
+        width: 28px;
+    }
+    .round.active {
+        transform: translateX(26px);
+    }
+    .icon__link {
+        height: 50px;
+        width: 50px;
     }
 }
 
@@ -396,3 +518,4 @@ nav a {
     }
 
 }
+

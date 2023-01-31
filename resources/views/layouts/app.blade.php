@@ -39,6 +39,7 @@
                                 <img class="icon__link" src="{{ asset('/media/home.svg') }}" height="45" width="45" alt="Return Home" title="Return Home"/>
                             </a>
                         @endif
+                       <x-theme-switch/>
                     </nav>
                 </header>
                 <main>
