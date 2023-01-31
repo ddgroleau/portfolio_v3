@@ -329,7 +329,7 @@ html[data-theme="light"]  .hero__img {
 }
 
 .community__body {
-    max-width: 100%;
+    max-width: 90%;
     text-overflow: ellipsis;
 }
 
