@@ -309,6 +309,7 @@ html[data-theme="light"]  .hero__img {
     padding: 0;
     margin: 2rem 0 1rem 0;
     gap: 1rem;
+    text-overflow: ellipsis;
 }
 
 
@@ -329,6 +330,7 @@ html[data-theme="light"]  .hero__img {
 
 .community__body {
     max-width: 100%;
+    text-overflow: ellipsis;
 }
 
 .community__body, .community__image {

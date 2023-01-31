@@ -100,7 +100,7 @@ $communityContributions = [
         "\"Docker for Developers\" (Richard Bullington-McGuire, Andrew K. Dennis & Michael Schwartz; Packt Publishing 2020)",
         "https://www.packtpub.com/product/react-key-concepts/9781803234502",
         "SEE BOOK",
-        "I contributed to the GitHub repository for the book (https://github.com/PacktPublishing/Docker-for-Developers)."
+        "I contributed to the GitHub repository for the book (github.com/PacktPublishing/Docker-for-Developers)."
     ),
 
 ];
