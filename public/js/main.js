@@ -77,10 +77,11 @@ const toggleMobileNav = () => {
     if(hamburger.classList.contains("active")) {
         hamburger.classList.remove("active");
         mobileNav.classList.remove("active");
+        document.body.removeAttribute("style")
     } else {
         hamburger.classList.add("active");
         mobileNav.classList.add("active");
-        window.documentElement.setAttribute("style","over-flow-y: hidden;")
+        document.body.setAttribute("style","overflow-y: hidden;")
     }
 }
 
