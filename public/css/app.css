@@ -310,14 +310,15 @@ nav a {
     padding: 0;
     list-style-type: none;
     z-index: 2;
-}
-
-.home__li {
-    line-height: max(4rem, 4vw);
+    display: flex;
+    flex-direction: column;
+    gap:  max(3rem, 3vw);
+    margin-top: max(3rem, 3vw);
 }
 
 .home__li > a {
-    font-size: var(--font-xl);
+    font-size: var(--font-xxl);
+    line-height: var(--font-xxl);;
     font-weight: 200;
     cursor: pointer;
     color: var(--text);
@@ -333,11 +334,10 @@ nav a {
 
 .hero__img {
     position: absolute;
-    bottom: -15vh;
+    bottom: -18vh;
     right: 5vw;
     z-index: 0;
 }
-
 html[data-theme="light"]  .hero__img {
     opacity: .1;
 }
@@ -516,8 +516,9 @@ html[data-theme="light"]  .hero__img {
         max-width: min(50vw,40rem);
     }
     .hero__img {
-        position: absolute;
-        bottom: 0vh;
+        position: fixed;
+        top: 30vh;
+        bottom: initial;
         right: 15vw;
     }
     html[data-theme="light"]  .hero__img {
