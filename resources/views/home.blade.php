@@ -7,8 +7,13 @@
         <h1>Dan Groleau</h1>
         <h2>Software Engineer</h2>
         <p>
-            I am a senior full-stack software engineer specializing in web development. 
-            I enjoy developing websites and applications for businesses of any size.
+            I am a senior full-stack software engineer with an extensive background in web development, and an 
+            Army Veteran with experience driving large projects from concept to production, both on time and on budget.
+        </p>
+        <p>
+            In my current role as a senior software developer at Tivity Health, Inc., I am building front and back-end applications
+            with React and C#/.NET. In my free time I enjoy working with different JavaScript frameworks and other languages and 
+            their associated framework(s), such as Java (Spring) and PHP (Laravel).
         </p>
     </section>
     <ul class="home__ul">

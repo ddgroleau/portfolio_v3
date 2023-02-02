@@ -1,5 +1,5 @@
 <?PHP
-    $description = "Dan Groleau is a Senior Fullstack Software Engineer currently working in the Healthcare IT space. Dan specializes in Web Development, and has been building enterprise-level websites and applications for several years.";
+    $description = "Dan Groleau is a Senior Fullstack Software Engineer currently working in the Healthcare IT space. Dan is an expert in Web Development, and has been building enterprise-level websites and applications for several years. Dan is also an Army Veteran, with years of experience driving large projects from concept to production, both on time and on budget.";
 ?>
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
