@@ -80,6 +80,7 @@ const toggleMobileNav = () => {
     } else {
         hamburger.classList.add("active");
         mobileNav.classList.add("active");
+        window.documentElement.setAttribute("style","over-flow-y: hidden;")
     }
 }
 
