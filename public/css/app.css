@@ -213,7 +213,7 @@ nav a {
     display: flex;
     position: absolute;
     top: 44px;
-    left: 24px;
+    left: 16px;
     width: 50px;
     height: 50px;
     z-index: 5;
@@ -272,7 +272,7 @@ nav a {
     gap: 2rem;
     background: var(--primary);
     outline: solid var(--secondary) 1px;
-    transition: all .4s ease-in-out;
+    transition: all .6s ease;
 }
 
 .mobile-nav.active {
@@ -295,7 +295,7 @@ nav a {
 /* Home Page */
 
 .hero__text {
-    z-index: 2;
+    z-index: 1;
 }
 
 .hero__text, main {
