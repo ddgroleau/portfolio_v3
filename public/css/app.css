@@ -312,13 +312,12 @@ nav a {
     z-index: 2;
     display: flex;
     flex-direction: column;
-    gap:  max(3rem, 3vw);
-    margin-top: max(3rem, 3vw);
+    gap:  max(2rem, 2vw);
 }
 
 .home__li > a {
-    font-size: var(--font-xxl);
-    line-height: var(--font-xxl);;
+    font-size: var(--font-xl);
+    line-height: var(--font-xl);;
     font-weight: 200;
     cursor: pointer;
     color: var(--text);
@@ -326,6 +325,7 @@ nav a {
     height: 100%;
     width: 100%;
     display: block;
+    text-decoration: underline;
 }
 
 .home__li a:hover {
