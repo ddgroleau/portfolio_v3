@@ -25,20 +25,25 @@
             <div class="layout__container-inner">
                 <header>
                     <nav>
-                        <a href="https://github.com/ddgroleau" target="_blank">
-                            <img class="icon__link" src="{{ asset('/media/github.svg') }}" height="50" width="50" alt="GitHub Link" title="View my GitHub Profile"/>
-                        </a>
-                        <a href="https://www.linkedin.com/in/dangroleau/" target="_blank">
-                            <img class="icon__link" src="{{ asset('/media/linkedin.svg') }}" height="50" width="50" alt="LinkedIn Link" title="View my LinkedIn Profile"/>
-                        </a>
-                        <a href="mailto:ddgroleau@gmail.com">
-                            <img class="icon__link" src="{{ asset('/media/email.svg') }}" height="50" width="50" alt="Email Me" title="Email Me"/>
-                        </a>
-                        @if(!isset($homePage))
-                            <a href="/">
-                                <img class="icon__link" src="{{ asset('/media/home.svg') }}" height="45" width="45" alt="Return Home" title="Return Home"/>
+                        <button class="toggle-btn">
+                            <div  class="toggle-btn__shape"></div>
+                        </button>
+                        <div class="mobile-nav">
+                            <a href="https://github.com/ddgroleau" target="_blank">
+                                <img class="icon__link" src="{{ asset('/media/github.svg') }}" height="50" width="50" alt="GitHub Link" title="View my GitHub Profile"/>
                             </a>
-                        @endif
+                            <a href="https://www.linkedin.com/in/dangroleau/" target="_blank">
+                                <img class="icon__link" src="{{ asset('/media/linkedin.svg') }}" height="50" width="50" alt="LinkedIn Link" title="View my LinkedIn Profile"/>
+                            </a>
+                            <a href="mailto:ddgroleau@gmail.com">
+                                <img class="icon__link" src="{{ asset('/media/email.svg') }}" height="50" width="50" alt="Email Me" title="Email Me"/>
+                            </a>
+                            @if(!isset($homePage))
+                                <a href="/">
+                                    <img class="icon__link" src="{{ asset('/media/home.svg') }}" height="45" width="45" alt="Return Home" title="Return Home"/>
+                                </a>
+                            @endif
+                        </div>
                        <x-theme-switch/>
                     </nav>
                 </header>

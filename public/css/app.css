@@ -207,7 +207,96 @@ nav a {
 }
 
 
+/* Mobile Nav & Hamburger Menu */
+
+.toggle-btn {
+    display: flex;
+    position: absolute;
+    top: 44px;
+    left: 24px;
+    width: 50px;
+    height: 50px;
+    z-index: 5;
+}
+
+.toggle-btn__shape {
+    display: inline-block;
+    height: 4px;
+    width: 50px;
+    background: var(--secondary);
+}
+
+.toggle-btn__shape:after {
+    display: flex;
+    content: " ";
+    height: 4px;
+    min-width: 50px;
+    background: var(--secondary);
+    transform: translateY(12px);
+    transition: transform .4s ease-in-out;
+}
+
+.toggle-btn__shape:before {
+    display: flex;
+    transform: translateY(-16px);
+    content: " ";
+    height: 4px;
+    min-width: 50px;
+    background: var(--secondary);
+    transition: transform .4s ease-in-out;
+}
+
+.toggle-btn.active > .toggle-btn__shape {
+    height: 0px;
+}
+
+.toggle-btn.active > .toggle-btn__shape:after {
+    transform: rotate(45deg) translateY(-2px);
+    opacity: 1;
+}
+
+.toggle-btn.active > .toggle-btn__shape:before {
+    transform: rotate(-45deg) translateY(2px);
+    opacity: 1;
+}
+
+.mobile-nav {
+    z-index: -1;
+    width: 0px;
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    gap: 2rem;
+    background: var(--primary);
+    outline: solid var(--secondary) 1px;
+    transition: all .4s ease-in-out;
+}
+
+.mobile-nav.active {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    z-index: 3;
+    padding-top: 120px;
+    padding-left: 30px;
+}
+
+.mobile-nav > a {
+    display: none;
+}
+
+.mobile-nav.active > a {
+    display: initial;
+}
+
 /* Home Page */
+
+.hero__text {
+    z-index: 2;
+}
 
 .hero__text, main {
     animation: slideRight .5s ease-out forwards;
@@ -233,6 +322,9 @@ nav a {
     cursor: pointer;
     color: var(--text);
     animation: textOrange 1s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+    height: 100%;
+    width: 100%;
+    display: block;
 }
 
 .home__li a:hover {
@@ -281,6 +373,7 @@ html[data-theme="light"]  .hero__img {
 /* Components */
 
 /* Project Card */
+
 .project__card {
     border: solid var(--secondary) 1px;
     border-radius: var(--border-rad);
@@ -354,7 +447,7 @@ html[data-theme="light"]  .hero__img {
     display: flex;
     align-items: center;
     z-index: 3;
-    animation: slideDown 1s ease-in-out .8s forwards;
+    animation: slideDown 1s ease-in-out .2s forwards;
     opacity: 0;
 }
 
@@ -454,6 +547,7 @@ html[data-theme="light"]  .hero__img {
     .switch {
         flex-direction: column;
         margin-top: 1rem;
+        animation: slideDown 1s ease-in-out .8s forwards;
     }
     .theme-switch {
         transform: rotate(90deg);
@@ -467,6 +561,26 @@ html[data-theme="light"]  .hero__img {
     .round {
         height: 28px;
         width: 28px;
+    }
+    .toggle-btn {
+        display: none;
+    }
+    .mobile-nav {
+        width: fit-content;
+        height: fit-content;
+        z-index: 3;
+        display: flex;
+        top: initial;
+        left: initial;
+        right: initial;
+        bottom: initial;
+        flex-direction: column;
+        position: relative;
+        background: none;
+        outline: none;
+    }
+    .mobile-nav > a {
+        display: initial;
     }
 }
 

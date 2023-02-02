@@ -65,3 +65,22 @@ const switchTheme = (e) => {
 }
 
 toggleSwitch.addEventListener('click', switchTheme, false);
+
+
+/**
+ * Hamburger Menu
+ */
+const hamburger = document.querySelector('.toggle-btn');
+const mobileNav = document.querySelector('.mobile-nav');
+
+const toggleMobileNav = () => {
+    if(hamburger.classList.contains("active")) {
+        hamburger.classList.remove("active");
+        mobileNav.classList.remove("active");
+    } else {
+        hamburger.classList.add("active");
+        mobileNav.classList.add("active");
+    }
+}
+
+hamburger.addEventListener('click',toggleMobileNav);
